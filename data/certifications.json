@@ -14,24 +14,24 @@
   "certifications": [
     {
       "id": "java-spring",
-      "title": "Java, Spring Boot, Docker & Microservices",
+      "title": "Java Spring Framework, Spring Boot, Spring AI - Gen AI",
       "issuer": "Telusko (Navin Reddy)",
       "date": "2024",
-      "credentialUrl": ""
+      "credentialUrl": "https://www.udemy.com/certificate/UC-81ad7476-2152-4582-ad5e-fde7f71f7282/"
     },
     {
       "id": "mern",
       "title": "Full-Stack Web Development (MERN)",
       "issuer": "Mentored by Kamal Sir",
       "date": "2023",
-      "credentialUrl": ""
+      "credentialUrl": "https://drive.google.com/file/d/1xzAoIL4OyCI-4kz42qt4J0OdK-edVLE5/view"
     },
     {
       "id": "sql",
       "title": "SQL (Intermediate)",
       "issuer": "HackerRank",
       "date": "2023",
-      "credentialUrl": "https://hackerrank.com"
+      "credentialUrl": "https://www.hackerrank.com/certificates/iframe/d6f2c4f089dc"
     }
   ],
   "achievements": [

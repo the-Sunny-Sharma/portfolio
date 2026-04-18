@@ -7,9 +7,6 @@ const SESSION_MAX_AGE = 60 * 60 * 24 // 24 hours
 export async function verifyAdminPassword(password: string): Promise<boolean> {
   const hash = process.env.ADMIN_PASSWORD_HASH
   if (!hash) return false
-  console.log('Raw hash from env:', JSON.stringify(hash));
-  console.log('Hash length:', hash.length);
-  console.log(`Hash: ${hash} and password: ${password}`)
   return bcrypt.compare(password, hash)
 }
 
