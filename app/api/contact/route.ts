@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: [process.env.CONTACT_EMAIL || 'sunny.sharma.syn@gmail.com'],
-      replyTo: email,
+      reply_to: email,
       subject: subject || `Portfolio contact from ${name}`,
       html: `
         <div style="font-family: monospace; background: #060A12; color: #E8F4F8; padding: 24px; border-radius: 8px; border: 1px solid #1E2D45; max-width: 600px;">
