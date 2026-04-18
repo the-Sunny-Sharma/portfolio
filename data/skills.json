@@ -1,0 +1,81 @@
+[
+  {
+    "category": "Backend",
+    "icon": "server",
+    "color": "cyan",
+    "skills": [
+      { "name": "Spring Boot", "level": 90 },
+      { "name": "Spring Security", "level": 85 },
+      { "name": "Spring Data JPA", "level": 85 },
+      { "name": "Node.js", "level": 88 },
+      { "name": "Express.js", "level": 85 },
+      { "name": "REST APIs", "level": 92 },
+      { "name": "Microservices", "level": 80 },
+      { "name": "Apache Kafka", "level": 72 }
+    ]
+  },
+  {
+    "category": "Frontend",
+    "icon": "layout",
+    "color": "amber",
+    "skills": [
+      { "name": "React.js", "level": 90 },
+      { "name": "Next.js", "level": 88 },
+      { "name": "TypeScript", "level": 82 },
+      { "name": "Tailwind CSS", "level": 90 },
+      { "name": "Redux", "level": 80 },
+      { "name": "Shadcn UI", "level": 78 }
+    ]
+  },
+  {
+    "category": "Languages",
+    "icon": "code",
+    "color": "green",
+    "skills": [
+      { "name": "Java", "level": 92 },
+      { "name": "JavaScript", "level": 90 },
+      { "name": "TypeScript", "level": 82 },
+      { "name": "Python", "level": 75 },
+      { "name": "Solidity", "level": 65 },
+      { "name": "SQL", "level": 85 }
+    ]
+  },
+  {
+    "category": "Databases",
+    "icon": "database",
+    "color": "cyan",
+    "skills": [
+      { "name": "PostgreSQL", "level": 85 },
+      { "name": "MySQL", "level": 85 },
+      { "name": "MongoDB", "level": 82 },
+      { "name": "Redis", "level": 72 },
+      { "name": "Firebase", "level": 78 }
+    ]
+  },
+  {
+    "category": "DevOps & Cloud",
+    "icon": "cloud",
+    "color": "amber",
+    "skills": [
+      { "name": "Docker", "level": 82 },
+      { "name": "GitHub Actions", "level": 78 },
+      { "name": "Nginx", "level": 72 },
+      { "name": "CI/CD", "level": 78 },
+      { "name": "Render", "level": 75 },
+      { "name": "Vercel", "level": 85 }
+    ]
+  },
+  {
+    "category": "Concepts",
+    "icon": "layers",
+    "color": "green",
+    "skills": [
+      { "name": "WebSockets", "level": 85 },
+      { "name": "WebRTC", "level": 78 },
+      { "name": "JWT / OAuth 2.0", "level": 88 },
+      { "name": "System Design", "level": 75 },
+      { "name": "Agile / Scrum", "level": 82 },
+      { "name": "JUnit / Mockito", "level": 80 }
+    ]
+  }
+]

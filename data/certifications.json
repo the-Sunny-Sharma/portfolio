@@ -1,0 +1,53 @@
+{
+  "education": [
+    {
+      "id": "ucoe",
+      "institution": "Universal College of Engineering",
+      "degree": "Bachelor of Engineering in Information Technology",
+      "grade": "CGPA: 8.19",
+      "location": "Mumbai, Maharashtra",
+      "startYear": 2021,
+      "endYear": 2025,
+      "coursework": ["Data Structures & Algorithms", "DBMS", "Operating Systems", "Computer Networks", "OOP"]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "java-spring",
+      "title": "Java, Spring Boot, Docker & Microservices",
+      "issuer": "Telusko (Navin Reddy)",
+      "date": "2024",
+      "credentialUrl": ""
+    },
+    {
+      "id": "mern",
+      "title": "Full-Stack Web Development (MERN)",
+      "issuer": "Mentored by Kamal Sir",
+      "date": "2023",
+      "credentialUrl": ""
+    },
+    {
+      "id": "sql",
+      "title": "SQL (Intermediate)",
+      "issuer": "HackerRank",
+      "date": "2023",
+      "credentialUrl": "https://hackerrank.com"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "innovateyou",
+      "title": "Finalist — InnovateYou Teachathon 2023",
+      "description": "National Level Hackathon, Pune — Top teams from 200+ participants nationally",
+      "icon": "trophy",
+      "highlight": true
+    },
+    {
+      "id": "csi",
+      "title": "Active Member — Computer Society of India (CSI)",
+      "description": "Certified in Cybersecurity & Drone Awareness workshops",
+      "icon": "award",
+      "highlight": false
+    }
+  ]
+}

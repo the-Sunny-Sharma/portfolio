@@ -1,0 +1,22 @@
+[
+  {
+    "id": "mira-2023",
+    "company": "Mira Advanced Engineering",
+    "role": "Intern — JavaScript Developer",
+    "location": "Thane, Maharashtra",
+    "type": "Internship",
+    "startDate": "Nov 2023",
+    "endDate": "Jan 2024",
+    "current": false,
+    "description": "Built and shipped production features for a multi-stack web application serving 200+ daily active users.",
+    "highlights": [
+      "Built 5+ RESTful APIs using Express.js with JWT authentication and validation middleware, reducing invalid request errors by 40%",
+      "Developed full-stack features using MERN stack with hybrid MongoDB/MySQL integration, serving 200+ daily active users",
+      "Implemented reusable React.js component library with Redux state management, cutting UI development time by 25%",
+      "Optimized database queries and refactored legacy Node.js services, improving overall application response time by 30%",
+      "Collaborated in an Agile team of 6; participated in daily stand-ups, sprint planning, and peer code reviews on GitHub",
+      "Deployed applications using Docker and CI/CD pipelines with GitHub Actions on cloud infrastructure"
+    ],
+    "tech": ["Express.js", "React.js", "Redux", "MongoDB", "MySQL", "Docker", "GitHub Actions", "JWT"]
+  }
+]
