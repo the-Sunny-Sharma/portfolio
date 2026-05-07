@@ -10,8 +10,7 @@
       { "name": "Node.js", "level": 88 },
       { "name": "Express.js", "level": 85 },
       { "name": "REST APIs", "level": 92 },
-      { "name": "Microservices", "level": 80 },
-      { "name": "Apache Kafka", "level": 72 }
+      { "name": "Microservices", "level": 80 }
     ]
   },
   {

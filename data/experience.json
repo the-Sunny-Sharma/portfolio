@@ -1,22 +1,41 @@
 [
   {
+    "id": "self-directed-2025",
+    "company": "Self-Directed Engineering Development",
+    "role": "Full-Stack Java Developer — Independent Projects & Certifications",
+    "location": "Mumbai, Maharashtra",
+    "type": "Self-Directed",
+    "startDate": "Feb 2025",
+    "endDate": "May 2026",
+    "current": false,
+    "description": "Dedicated focused time post-graduation to building and deploying production-grade full-stack applications while managing a family responsibility following a medical emergency.",
+    "highlights": [
+      "Built and deployed 3 production-grade full-stack applications using Java, Spring Boot, Spring Security, MySQL, React.js, and Docker — all live with CI/CD pipelines",
+      "Completed Udemy certification in Java, Spring Boot, Docker & Microservices (Telusko/Navin Reddy)",
+      "Earned HackerRank SQL Intermediate certificate",
+      "Co-authored a research paper on Codenest platform submitted to ITEGAM-JETIA journal (under review)",
+      "Applied every certification concept directly to new deployed projects — no tutorial hell, only shipped products"
+    ],
+    "tech": ["Spring Boot", "Spring Security", "JWT", "MySQL", "JPA/Hibernate", "React.js", "Docker", "GitHub Actions", "Next.js", "Node.js", "MongoDB"]
+  },
+  {
     "id": "mira-2023",
     "company": "Mira Advanced Engineering",
-    "role": "Intern — JavaScript Developer",
+    "role": "Intern — JavaScript Full-Stack Developer",
     "location": "Thane, Maharashtra",
     "type": "Internship",
-    "startDate": "Nov 2023",
+    "startDate": "Dec 2023",
     "endDate": "Jan 2024",
     "current": false,
-    "description": "Built and shipped production features for a multi-stack web application serving 200+ daily active users.",
+    "description": "Completed an intensive full-stack internship delivering one production-ready project per week under real sprint deadlines.",
     "highlights": [
-      "Built 5+ RESTful APIs using Express.js with JWT authentication and validation middleware, reducing invalid request errors by 40%",
-      "Developed full-stack features using MERN stack with hybrid MongoDB/MySQL integration, serving 200+ daily active users",
-      "Implemented reusable React.js component library with Redux state management, cutting UI development time by 25%",
-      "Optimized database queries and refactored legacy Node.js services, improving overall application response time by 30%",
-      "Collaborated in an Agile team of 6; participated in daily stand-ups, sprint planning, and peer code reviews on GitHub",
-      "Deployed applications using Docker and CI/CD pipelines with GitHub Actions on cloud infrastructure"
+      "Delivered one complete full-stack project per week under sprint deadlines — including an Airline Management System and an Employee Management System using the MERN stack",
+      "Built RESTful APIs using Express.js with JWT authentication, input validation, and role-based access control across all projects",
+      "Integrated MongoDB and MySQL hybrid storage for persistent data management across multiple applications",
+      "Implemented React.js frontends with Redux state management for each delivered project",
+      "Used Git for version control; participated in daily stand-ups, code reviews, and weekly demo presentations",
+      "Submitted fully documented codebases weekly — simulating Agile sprint delivery cycles"
     ],
-    "tech": ["Express.js", "React.js", "Redux", "MongoDB", "MySQL", "Docker", "GitHub Actions", "JWT"]
+    "tech": ["Express.js", "React.js", "Redux", "MongoDB", "MySQL", "Node.js", "JWT", "Git"]
   }
 ]
