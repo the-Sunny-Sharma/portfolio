@@ -1,4 +1,77 @@
 [
+   {
+    "id": "traderos",
+    "title": "TraderOS",
+    "tagline": "AI-Powered Tax Intelligence Platform",
+    "description": "Platform for trader tax analysis, broker report processing, and AI-assisted financial insights.",
+    "longDescription": "TraderOS automates tax assessment workflows for active traders. Built using Spring Boot, PostgreSQL, Python services, and AI-powered workflows. The platform is being extended with Retrieval-Augmented Generation (RAG), semantic search, pgvector, and local embedding models to provide grounded insights from trading and taxation data.",
+    "tech": [
+      "Spring Boot",
+      "Java",
+      "PostgreSQL",
+      "Python",
+      "Docker",
+      "JWT",
+      "React",
+      "pgvector",
+      "RAG"
+    ],
+    "github": "https://github.com/the-Sunny-Sharma/traderOS",
+    "live": "",
+    "status": "under-development",
+    "featured": true,
+    "highlight": "AI Tax Intelligence + RAG",
+    "category": "Full-Stack",
+    "date": "May 2026"
+  },
+   {
+    "id": "codenest",
+    "title": "Codenest",
+    "tagline": "Real-Time Collaborative Learning Platform",
+    "description": "Interactive coding classrooms with live collaboration, streaming, and code execution.",
+    "longDescription": "Codenest is a complete EdTech platform featuring collaborative coding rooms, live classrooms, instructor-student interaction, video streaming, live chat, code execution, and real-time synchronization. Built to explore WebSockets, WebRTC, distributed systems, and low-latency communication.",
+    "tech": [
+      "Next.js",
+      "React",
+      "Socket.IO",
+      "MongoDB",
+      "WebRTC",
+      "Mux",
+      "Judge0",
+      "Cashfree"
+    ],
+    "github": "https://github.com/the-Sunny-Sharma/codenest-ucoe",
+    "live": "",
+    "status": "live",
+    "featured": true,
+    "highlight": "Real-Time Collaboration",
+    "category": "Full-Stack",
+    "date": "Jan 2025"
+  },
+    {
+    "id": "smart-ats",
+    "title": "Smart ATS",
+    "tagline": "AI-Powered Applicant Tracking System",
+    "description": "Resume parsing, candidate scoring, semantic ranking, interview management, and hiring workflows.",
+    "longDescription": "Built as a full-stack AI recruitment platform using Next.js, Express.js, FastAPI, MongoDB, Docker, and LLM-powered workflows. Features include resume parsing, candidate-job matching, semantic ranking using embeddings, analytics dashboards, subscription plans, and hiring automation.",
+    "tech": [
+      "Next.js",
+      "Express.js",
+      "FastAPI",
+      "MongoDB",
+      "Docker",
+      "Groq",
+      "OpenRouter",
+      "Sentence Transformers"
+    ],
+    "github": "https://github.com/the-Sunny-Sharma/smart-ats",
+    "live": "https://talent-flow-ai-the-sunny-sharma.vercel.app/",
+    "status": "live",
+    "featured": true,
+    "highlight": "Built in 36 Hours",
+    "category": "Full-Stack",
+    "date": "May 2026"
+  },
   {
     "id": "job-board",
     "title": "Job Board Application",
@@ -29,21 +102,7 @@
     "category": "Full-Stack",
     "date": "Apr 2026"
   },
-  {
-    "id": "codenest",
-    "title": "Codenest",
-    "tagline": "Real-Time Collaborative Coding & Gamification Platform",
-    "description": "A unified platform for real-time collaborative coding (Monaco Editor), live lectures (Mux + HLS.js), payments (Cashfree), and gamified student-teacher interaction — research paper co-authored and submitted to ITEGAM-JETIA journal.",
-    "longDescription": "Architected a 7-layer scalable edtech platform featuring a modular service layer (Course, User, Payment, Media, Code Execution, Gamification, Chat services) and an API Gateway with NextAuth v5 middleware for auth, request validation, and rate-limiting. Achieved sub-100ms WebRTC sync latency across 50+ concurrent users via Nginx reverse-proxy. Used Redis to queue code submissions executed in isolated sandboxes via Judge0 API. Real-time collaborative IDE powered by Socket.IO WebSockets with conflict resolution and state broadcast. Integrated Mux HLS live streaming, Cashfree payments, CI/CD on Render, and a CDN edge network — achieving 98.9% uptime and 0.8% error rate across 1,000 test actions.",
-    "tech": ["Next.js", "Node.js", "Socket.IO", "WebRTC", "MongoDB", "Redis", "Nginx", "Mux", "HLS.js", "Judge0", "Cashfree"],
-    "github": "https://github.com/the-Sunny-Sharma/codenest-ucoe",
-    "live": "https://codenest-syn.vercel.app",
-    "status": "live",
-    "featured": true,
-    "highlight": "sub-100ms WebRTC latency · 50+ concurrent users · research paper",
-    "category": "Full-Stack",
-    "date": "Jan 2025"
-  },
+  
   {
     "id": "hushmail",
     "title": "Hushmail",

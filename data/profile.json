@@ -1,14 +1,15 @@
 {
   "name": "Sunny Sharma",
-  "tagline": "Full-Stack Developer",
+  "tagline": "Full-Stack Software Engineer",
   "roles": [
-    "Java Backend Developer",
-    "Spring Boot Engineer",
-    "MERN Stack Developer",
+    "Full-Stack Software Engineer",
+    "Spring Boot Backend Developer",
+    "AI Application Engineer",
     "Next.js Developer",
-    "Full-Stack Developer"
+    "Real-Time Systems Builder",
+    "Open Source Contributor"
   ],
-  "summary": "Full-Stack Developer with hands-on experience in Java (Spring Boot, Spring Security, Microservices) and JavaScript (MERN/Next.js). Built and deployed production-grade applications featuring real-time communication (WebRTC, Socket.IO), blockchain integration (Solidity/Ethereum), ML-powered features, and live-streaming infrastructure. Seeking a Java Full-Stack or Backend Developer role to build scalable, high-performance systems.",
+  "summary": "Full-Stack Software Engineer specializing in scalable backend systems, AI-powered applications, and real-time platforms. I build end-to-end products using Spring Boot, React, Next.js, Node.js, PostgreSQL, MongoDB, Docker, and modern cloud-native architectures. My recent work includes AI recruitment systems, financial intelligence platforms, Retrieval-Augmented Generation (RAG) pipelines, and collaborative learning platforms.",
   "shortBio": "I build things that scale. From real-time collaborative editors to blockchain-based platforms, I love tackling complex engineering problems with clean, maintainable code.",
   "location": "Mumbai, Maharashtra, India",
   "email": "sunny.sharma.syn@gmail.com",
@@ -21,3 +22,5 @@
   "availableFrom": "Immediately",
   "photo": "/images/sunny.png"
 }
+
+
