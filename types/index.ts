@@ -14,6 +14,23 @@ export interface Project {
   date: string
 }
 
+export interface ExperienceStat {
+  value: string
+  label: string
+}
+
+// A product area owned or contributed to within a role, shown as a tab on the experience card.
+export interface ExperienceModule {
+  id: string
+  name: string
+  tagline: string
+  ownership: string
+  summary: string
+  stats?: string[]
+  highlights: string[]
+  tech: string[]
+}
+
 export interface Experience {
   id: string
   company: string
@@ -26,6 +43,8 @@ export interface Experience {
   description: string
   highlights: string[]
   tech: string[]
+  stats?: ExperienceStat[]
+  modules?: ExperienceModule[]
 }
 
 export interface Profile {
@@ -43,6 +62,8 @@ export interface Profile {
   resumeUrl: string
   openToWork: boolean
   availableFrom: string
+  currentRole?: string
+  currentCompany?: string
   photo: string
 }
 

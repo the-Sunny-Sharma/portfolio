@@ -1,16 +1,16 @@
 {
   "name": "Sunny Sharma",
-  "tagline": "Full-Stack Software Engineer",
+  "tagline": "Full-Stack Engineer · AI Products",
   "roles": [
-    "Full-Stack Software Engineer",
-    "Spring Boot Backend Developer",
-    "AI Application Engineer",
-    "Next.js Developer",
-    "Real-Time Systems Builder",
-    "Open Source Contributor"
+    "Full-Stack Developer",
+    "AI Product Engineer",
+    "React + FastAPI Engineer",
+    "Media Tooling Engineer",
+    "Spring Boot Developer",
+    "Real-Time Systems Builder"
   ],
-  "summary": "Full-Stack Software Engineer specializing in scalable backend systems, AI-powered applications, and real-time platforms. I build end-to-end products using Spring Boot, React, Next.js, Node.js, PostgreSQL, MongoDB, Docker, and modern cloud-native architectures. My recent work includes AI recruitment systems, financial intelligence platforms, Retrieval-Augmented Generation (RAG) pipelines, and collaborative learning platforms.",
-  "shortBio": "I build things that scale. From real-time collaborative editors to blockchain-based platforms, I love tackling complex engineering problems with clean, maintainable code.",
+  "summary": "Full-stack engineer who builds AI-powered products end to end, from PostgreSQL schemas and Python/FastAPI services to rich React interfaces. As a Full-Stack Developer Intern at Namaah Pvt. Ltd., I single-handedly built two production modules of Atlas, an AI film-production platform: Slate, a collaborative review and production workspace, and the Storyboard Studio, with AI shot generation and in-browser MP4 animatic export. Before that I shipped Java/Spring Boot and MERN products, including an AI applicant-tracking system, a RAG-backed tax platform and a real-time collaborative classroom, so I'm at home across Python, Java and JavaScript stacks.",
+  "shortBio": "I build AI-powered products end to end, from schema to UI. At Namaah I'm building Atlas, an AI film-production platform, where I single-handedly shipped its review workspace and storyboard studio.",
   "location": "Mumbai, Maharashtra, India",
   "email": "sunny.sharma.syn@gmail.com",
   "phone": "+91 84338 98723",
@@ -19,8 +19,8 @@
   "website": "https://the-sunny-sharma.vercel.app",
   "resumeUrl": "/resume.pdf",
   "openToWork": true,
-  "availableFrom": "Immediately",
+  "availableFrom": "Dec 2026",
+  "currentRole": "Full-Stack Developer Intern",
+  "currentCompany": "Namaah Pvt. Ltd.",
   "photo": "/images/sunny.png"
 }
-
-

@@ -12,10 +12,12 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ]
 
-export default function Navbar({ profile }: { profile: { name: string; resumeUrl: string; openToWork: boolean } }) {
+export default function Navbar({ profile }: { profile: { name: string; resumeUrl: string; openToWork: boolean; availableFrom: string } }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('')
+  const availableNow = !profile.availableFrom || profile.availableFrom.toLowerCase() === 'immediately'
+  const openLabel = availableNow ? 'Open to work' : `Open from ${profile.availableFrom}`
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -53,7 +55,7 @@ export default function Navbar({ profile }: { profile: { name: string; resumeUrl
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-6">
           {NAV_LINKS.map(link => (
             <li key={link.href}>
               <a
@@ -71,9 +73,9 @@ export default function Navbar({ profile }: { profile: { name: string; resumeUrl
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           {profile.openToWork && (
-            <span className="flex items-center gap-1.5 text-xs font-mono text-green bg-green/10 border border-green/20 px-2.5 py-1 rounded-full">
+            <span className="hidden lg:flex items-center gap-1.5 text-xs font-mono text-green bg-green/10 border border-green/20 px-2.5 py-1 rounded-full whitespace-nowrap">
               <span className="w-1.5 h-1.5 bg-green rounded-full animate-pulse" />
-              Open to work
+              {openLabel}
             </span>
           )}
           <a
@@ -115,7 +117,7 @@ export default function Navbar({ profile }: { profile: { name: string; resumeUrl
               {profile.openToWork && (
                 <span className="flex items-center gap-1.5 text-xs font-mono text-green">
                   <span className="w-1.5 h-1.5 bg-green rounded-full animate-pulse" />
-                  Open to work
+                  {availableNow ? 'Open to work' : `Open to full-time roles from ${profile.availableFrom}`}
                 </span>
               )}
               <a

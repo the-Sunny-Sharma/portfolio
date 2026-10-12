@@ -1,7 +1,7 @@
 'use client'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
-import { MapPin, Mail, Phone, Github, Linkedin, Globe } from 'lucide-react'
+import { MapPin, Mail, Briefcase, Github, Linkedin, Globe } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 type Profile = {
@@ -15,11 +15,22 @@ type Profile = {
   linkedin: string
   website: string
   photo: string
+  openToWork: boolean
   availableFrom: string
+  currentRole?: string
+  currentCompany?: string
 }
 
 export default function About({ profile }: { profile: Profile }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
+  const availableNow = !profile.availableFrom || profile.availableFrom.toLowerCase() === 'immediately'
+  const quickFacts = [
+    ...(profile.currentRole && profile.currentCompany
+      ? [{ icon: Briefcase, label: `${profile.currentRole} @ ${profile.currentCompany}` }]
+      : []),
+    { icon: MapPin, label: profile.location },
+    { icon: Mail, label: profile.email },
+  ]
 
   return (
     <section id="about" className="py-20 sm:py-28 relative" ref={ref}>
@@ -42,9 +53,10 @@ export default function About({ profile }: { profile: Profile }) {
             }`}
           >
             <div className="relative">
-              {/* Rotating gradient border */}
-              <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full p-[3px] bg-gradient-to-br from-cyan via-amber to-cyan animate-spin-slow">
-                <div className="w-full h-full rounded-full overflow-hidden bg-surface">
+              {/* Rotating gradient border — only the ring spins; the photo stays upright on top of it */}
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full p-[3px]">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan via-amber to-cyan animate-spin-slow" />
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-surface">
                   <Image
                     src={profile.photo}
                     alt={profile.name}
@@ -59,10 +71,12 @@ export default function About({ profile }: { profile: Profile }) {
               {/* Glow ring */}
               <div className="absolute inset-0 rounded-full bg-cyan/5 blur-xl -z-10" />
               {/* Badge */}
-              <div className="absolute -bottom-2 -right-2 bg-surface border border-border rounded-full px-3 py-1.5 font-mono text-xs text-green flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-green rounded-full animate-pulse" />
-                Available
-              </div>
+              {profile.openToWork && (
+                <div className="absolute -bottom-2 -right-2 bg-surface border border-border rounded-full px-3 py-1.5 font-mono text-xs text-green flex items-center gap-1.5 whitespace-nowrap">
+                  <span className="w-1.5 h-1.5 bg-green rounded-full animate-pulse" />
+                  {availableNow ? 'Available' : `Open · ${profile.availableFrom}`}
+                </div>
+              )}
             </div>
           </div>
 
@@ -78,13 +92,15 @@ export default function About({ profile }: { profile: Profile }) {
 
             {/* Quick facts */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              {[
-                { icon: MapPin, label: profile.location },
-                { icon: Mail, label: profile.email },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 font-mono text-xs text-text-muted">
-                  <Icon size={13} className="text-cyan flex-shrink-0" />
-                  <span className="truncate">{label}</span>
+              {quickFacts.map(({ icon: Icon, label }, idx) => (
+                <div
+                  key={label}
+                  className={`flex items-start gap-2 font-mono text-xs text-text-muted min-w-0 ${
+                    quickFacts.length % 2 === 1 && idx === 0 ? 'sm:col-span-2' : ''
+                  }`}
+                >
+                  <Icon size={13} className="text-cyan flex-shrink-0 mt-px" />
+                  <span className="min-w-0 break-words">{label}</span>
                 </div>
               ))}
             </div>
@@ -92,10 +108,11 @@ export default function About({ profile }: { profile: Profile }) {
             {/* Personality chips */}
             <div className="flex flex-wrap gap-2 mb-8">
               {[
-                '☕ Coffee-driven coder',
+                '🎬 Building AI film tools',
+                '🧩 Owns features, schema to UI',
+                '⚡ Performance-minded',
                 '🧠 System design enthusiast',
-                '🚀 Ships fast, scales smart',
-                '🌐 Open source contributor',
+                '☕ Coffee-driven coder',
                 '🎯 Detail-oriented',
               ].map(trait => (
                 <span

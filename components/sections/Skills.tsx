@@ -1,12 +1,12 @@
 'use client'
 import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { Server, Layout, Code2, Database, Cloud, Layers } from 'lucide-react'
+import { Server, Layout, Code2, Database, Cloud, Layers, Sparkles } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 const ICON_MAP: Record<string, React.ElementType> = {
   server: Server, layout: Layout, code: Code2,
-  database: Database, cloud: Cloud, layers: Layers,
+  database: Database, cloud: Cloud, layers: Layers, sparkles: Sparkles,
 }
 const COLOR_MAP: Record<string, string> = {
   cyan: 'text-cyan border-cyan/30 bg-cyan/10',
@@ -23,6 +23,7 @@ export default function Skills({ skills }: { skills: Category[] }) {
 
   const current = skills[active]
   const Icon = ICON_MAP[current.icon] || Code2
+  const allSkillNames = Array.from(new Set(skills.flatMap(c => c.skills.map(s => s.name))))
 
   return (
     <section id="skills" className="py-20 sm:py-28 bg-surface/30 relative" ref={ref}>
@@ -71,9 +72,9 @@ export default function Skills({ skills }: { skills: Category[] }) {
             <div className="space-y-4">
               {current.skills.map((skill, i) => (
                 <div key={skill.name}>
-                  <div className="flex justify-between items-center mb-1.5">
-                    <span className="font-mono text-sm text-text-secondary">{skill.name}</span>
-                    <span className="font-mono text-xs text-text-muted">{skill.level}%</span>
+                  <div className="flex justify-between items-center gap-3 mb-1.5">
+                    <span className="font-mono text-sm text-text-secondary min-w-0">{skill.name}</span>
+                    <span className="font-mono text-xs text-text-muted flex-shrink-0">{skill.level}%</span>
                   </div>
                   <div className="w-full h-[3px] bg-surface-2 rounded-full overflow-hidden">
                     <div
@@ -97,7 +98,7 @@ export default function Skills({ skills }: { skills: Category[] }) {
           <p className="font-mono text-xs text-text-muted text-center mb-4">Also worked with</p>
           <div className="overflow-hidden relative">
             <div className="flex gap-3 animate-marquee whitespace-nowrap">
-              {[...skills.flatMap(c => c.skills.map(s => s.name)), ...skills.flatMap(c => c.skills.map(s => s.name))].map((name, i) => (
+              {[...allSkillNames, ...allSkillNames].map((name, i) => (
                 <span
                   key={`${name}-${i}`}
                   className="flex-shrink-0 font-mono text-xs text-text-muted border border-border px-3 py-1 rounded-full"

@@ -16,41 +16,46 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
+const SITE_URL = 'https://the-sunny-sharma.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'Sunny Sharma — Full-Stack Developer',
+  title: 'Sunny Sharma — Full-Stack Engineer · AI Products',
   description:
-    'Full-Stack Developer specializing in Java (Spring Boot, Microservices) and JavaScript (MERN/Next.js). Building scalable, high-performance systems. Open to Java Backend & Full-Stack roles.',
+    'Full-stack engineer building AI-powered products with React, Python/FastAPI and Java/Spring Boot. Full-Stack Developer Intern at Namaah Pvt. Ltd., where I built the Slate review workspace and the Storyboard Studio for Atlas, an AI film-production platform. Open to full-time roles from Dec 2026.',
   keywords: [
     'Sunny Sharma',
     'Full Stack Developer',
-    'Java Developer',
-    'Spring Boot',
-    'MERN Stack',
-    'Next.js',
+    'AI Product Engineer',
+    'FastAPI',
+    'Python Developer',
     'React',
+    'Next.js',
+    'PostgreSQL',
+    'Spring Boot',
+    'Java Developer',
+    'Generative AI',
     'Mumbai Developer',
-    'Backend Developer',
   ],
-  authors: [{ name: 'Sunny Sharma', url: 'https://sunnysharma.vercel.app' }],
+  authors: [{ name: 'Sunny Sharma', url: SITE_URL }],
   creator: 'Sunny Sharma',
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://sunnysharma.vercel.app',
-    title: 'Sunny Sharma — Full-Stack Developer',
+    url: SITE_URL,
+    title: 'Sunny Sharma — Full-Stack Engineer · AI Products',
     description:
-      'Full-Stack Developer specializing in Java (Spring Boot) and MERN/Next.js. Building scalable systems.',
+      'Full-stack engineer building AI-powered products end to end with React, FastAPI and Spring Boot. Currently building Atlas, an AI film-production platform, at Namaah.',
     siteName: 'Sunny Sharma Portfolio',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sunny Sharma — Full-Stack Developer',
-    description: 'Full-Stack Developer | Spring Boot | MERN | Next.js',
+    title: 'Sunny Sharma — Full-Stack Engineer · AI Products',
+    description: 'Full-Stack Engineer | React · FastAPI · Spring Boot | Building AI film tools at Namaah',
     images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },
-  metadataBase: new URL('https://sunnysharma.vercel.app'),
+  metadataBase: new URL(SITE_URL),
 }
 
 export const viewport: Viewport = {

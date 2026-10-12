@@ -18,11 +18,15 @@ type Experience = {
   id: string; company: string; role: string; location: string; type: string
   startDate: string; endDate: string; current: boolean
   description: string; highlights: string[]; tech: string[]
+  // Not editable here — edited in data/experience.json. Spread updates keep them intact on save.
+  stats?: { value: string; label: string }[]
+  modules?: { id: string; name: string }[]
 }
 type Profile = {
   name: string; tagline: string; roles: string[]; summary: string; shortBio: string
   location: string; email: string; phone: string; github: string; linkedin: string
   website: string; resumeUrl: string; openToWork: boolean; availableFrom: string; photo: string
+  currentRole?: string; currentCompany?: string
 }
 type Certifications = {
   education: { id: string; institution: string; degree: string; grade: string; location: string; startYear: number; endYear: number; coursework: string[] }[]
@@ -274,7 +278,9 @@ function ProfilePanel({ initial }: { initial: Profile }) {
           <Field label="Email"><Input value={profile.email} onChange={v => set('email', v)} type="email" /></Field>
           <Field label="Phone"><Input value={profile.phone} onChange={v => set('phone', v)} /></Field>
           <Field label="Location"><Input value={profile.location} onChange={v => set('location', v)} /></Field>
-          <Field label="Available From"><Input value={profile.availableFrom} onChange={v => set('availableFrom', v)} /></Field>
+          <Field label="Available From"><Input value={profile.availableFrom} onChange={v => set('availableFrom', v)} placeholder="Immediately or Dec 2026" /></Field>
+          <Field label="Current Role"><Input value={profile.currentRole ?? ''} onChange={v => set('currentRole', v)} placeholder="Full-Stack Developer Intern" /></Field>
+          <Field label="Current Company"><Input value={profile.currentCompany ?? ''} onChange={v => set('currentCompany', v)} placeholder="Leave empty to hide" /></Field>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Field label="GitHub URL"><Input value={profile.github} onChange={v => set('github', v)} /></Field>
@@ -401,6 +407,12 @@ function ExperiencePanel({ initial }: { initial: Experience[] }) {
               <Field label="Tech Stack (comma separated)">
                 <Input value={e.tech.join(', ')} onChange={v => update(e.id, 'tech', v.split(',').map(t => t.trim()).filter(Boolean))} />
               </Field>
+              {(e.modules?.length || e.stats?.length) ? (
+                <p className="font-mono text-xs text-text-muted bg-bg border border-border rounded-lg px-3 py-2">
+                  Also has {e.stats?.length ?? 0} stat(s) and {e.modules?.length ?? 0} module tab(s){e.modules?.length ? ` (${e.modules.map(m => m.name).join(', ')})` : ''}.
+                  These are kept on save; edit them in <code className="text-cyan">data/experience.json</code>.
+                </p>
+              ) : null}
             </div>
           )}
         </div>

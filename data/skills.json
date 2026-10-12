@@ -4,13 +4,13 @@
     "icon": "server",
     "color": "cyan",
     "skills": [
-      { "name": "Spring Boot", "level": 90 },
-      { "name": "Spring Security", "level": 85 },
-      { "name": "Spring Data JPA", "level": 85 },
-      { "name": "Node.js", "level": 88 },
-      { "name": "Express.js", "level": 85 },
-      { "name": "REST APIs", "level": 92 },
-      { "name": "Microservices", "level": 80 }
+      { "name": "REST API Design", "level": 92 },
+      { "name": "FastAPI", "level": 88 },
+      { "name": "Spring Boot", "level": 88 },
+      { "name": "SQLAlchemy & Alembic", "level": 85 },
+      { "name": "Node.js / Express.js", "level": 85 },
+      { "name": "Spring Security & JPA", "level": 84 },
+      { "name": "Background Jobs & Queues", "level": 82 }
     ]
   },
   {
@@ -18,63 +18,78 @@
     "icon": "layout",
     "color": "amber",
     "skills": [
-      { "name": "React.js", "level": 90 },
-      { "name": "Next.js", "level": 88 },
-      { "name": "TypeScript", "level": 82 },
+      { "name": "React.js", "level": 92 },
+      { "name": "Next.js", "level": 86 },
+      { "name": "Zustand / Redux", "level": 85 },
+      { "name": "Vite", "level": 85 },
       { "name": "Tailwind CSS", "level": 90 },
-      { "name": "Redux", "level": 80 },
-      { "name": "Shadcn UI", "level": 78 }
+      { "name": "TypeScript", "level": 82 }
+    ]
+  },
+  {
+    "category": "AI & Media",
+    "icon": "sparkles",
+    "color": "green",
+    "skills": [
+      { "name": "LLM APIs (OpenAI, any-llm)", "level": 86 },
+      { "name": "fal.ai Image/Video/Audio", "level": 86 },
+      { "name": "Prompt Engineering", "level": 84 },
+      { "name": "WebCodecs & mp4-muxer", "level": 80 },
+      { "name": "Web Audio API", "level": 80 },
+      { "name": "FFmpeg", "level": 76 },
+      { "name": "RAG & Embeddings", "level": 75 }
     ]
   },
   {
     "category": "Languages",
     "icon": "code",
-    "color": "green",
+    "color": "cyan",
     "skills": [
-      { "name": "Java", "level": 92 },
-      { "name": "JavaScript", "level": 90 },
+      { "name": "JavaScript", "level": 92 },
+      { "name": "Python", "level": 86 },
+      { "name": "Java", "level": 88 },
+      { "name": "SQL", "level": 86 },
       { "name": "TypeScript", "level": 82 },
-      { "name": "Python", "level": 75 },
-      { "name": "Solidity", "level": 65 },
-      { "name": "SQL", "level": 85 }
+      { "name": "Solidity", "level": 62 }
     ]
   },
   {
-    "category": "Databases",
+    "category": "Databases & Storage",
     "icon": "database",
-    "color": "cyan",
+    "color": "amber",
     "skills": [
-      { "name": "PostgreSQL", "level": 85 },
+      { "name": "PostgreSQL", "level": 88 },
       { "name": "MySQL", "level": 85 },
-      { "name": "MongoDB", "level": 82 },
+      { "name": "MongoDB", "level": 80 },
+      { "name": "Cloudflare R2 / S3", "level": 82 },
       { "name": "Redis", "level": 72 },
-      { "name": "Firebase", "level": 78 }
+      { "name": "Firebase", "level": 76 }
     ]
   },
   {
     "category": "DevOps & Cloud",
     "icon": "cloud",
-    "color": "amber",
+    "color": "green",
     "skills": [
       { "name": "Docker", "level": 82 },
-      { "name": "GitHub Actions", "level": 78 },
-      { "name": "Nginx", "level": 72 },
-      { "name": "CI/CD", "level": 78 },
-      { "name": "Render", "level": 75 },
-      { "name": "Vercel", "level": 85 }
+      { "name": "GitHub Actions / CI-CD", "level": 78 },
+      { "name": "Vercel", "level": 85 },
+      { "name": "Railway", "level": 78 },
+      { "name": "Cloudflare Pages", "level": 76 },
+      { "name": "Nginx", "level": 70 }
     ]
   },
   {
-    "category": "Concepts",
+    "category": "Engineering Practice",
     "icon": "layers",
-    "color": "green",
+    "color": "cyan",
     "skills": [
-      { "name": "WebSockets", "level": 85 },
-      { "name": "WebRTC", "level": 78 },
-      { "name": "JWT / OAuth 2.0", "level": 88 },
-      { "name": "System Design", "level": 75 },
-      { "name": "Agile / Scrum", "level": 82 },
-      { "name": "JUnit / Mockito", "level": 80 }
+      { "name": "RBAC, JWT & OAuth 2.0", "level": 88 },
+      { "name": "WebSockets / WebRTC", "level": 82 },
+      { "name": "Performance Optimisation", "level": 82 },
+      { "name": "pytest / Vitest", "level": 78 },
+      { "name": "JUnit / Mockito", "level": 78 },
+      { "name": "System Design", "level": 78 }
     ]
   }
 ]

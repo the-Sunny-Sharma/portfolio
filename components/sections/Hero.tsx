@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import { TypeAnimation } from 'react-type-animation'
-import { Github, Linkedin, Mail, ArrowDown, ExternalLink } from 'lucide-react'
+import { Github, Linkedin, Mail, ArrowDown, ExternalLink, Briefcase } from 'lucide-react'
 
 type Profile = {
   name: string
@@ -13,6 +13,10 @@ type Profile = {
   email: string
   resumeUrl: string
   location: string
+  openToWork: boolean
+  availableFrom: string
+  currentRole?: string
+  currentCompany?: string
 }
 
 export default function Hero({ profile }: { profile: Profile }) {
@@ -85,6 +89,8 @@ export default function Hero({ profile }: { profile: Profile }) {
   }, [])
 
   const typeSequence = profile.roles.flatMap(role => [role, 2000]).flat()
+  const availableNow = !profile.availableFrom || profile.availableFrom.toLowerCase() === 'immediately'
+  const city = profile.location.split(',')[0]
 
   return (
     <section
@@ -100,10 +106,15 @@ export default function Hero({ profile }: { profile: Profile }) {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-16 text-center">
         {/* Status badge */}
-        <div className="inline-flex items-center gap-2 font-mono text-xs bg-green/10 border border-green/20 text-green px-4 py-1.5 rounded-full mb-8 animate-fade-in">
-          <span className="w-1.5 h-1.5 bg-green rounded-full animate-pulse" />
-          Available for opportunities · Mumbai, IN
-        </div>
+        {profile.openToWork && (
+          <div className="inline-flex items-center gap-2 font-mono text-xs bg-green/10 border border-green/20 text-green px-4 py-1.5 rounded-full mb-8 animate-fade-in">
+            <span className="w-1.5 h-1.5 bg-green rounded-full animate-pulse flex-shrink-0" />
+            <span>
+              {availableNow ? 'Available for opportunities' : `Open to full-time roles from ${profile.availableFrom}`}
+              <span className="hidden sm:inline"> · {city}, IN</span>
+            </span>
+          </div>
+        )}
 
         {/* Name */}
         <h1 className="font-mono text-4xl sm:text-6xl lg:text-7xl font-bold mb-4 animate-slide-up">
@@ -112,7 +123,7 @@ export default function Hero({ profile }: { profile: Profile }) {
         </h1>
 
         {/* Animated role */}
-        <div className="font-mono text-lg sm:text-2xl lg:text-3xl text-text-secondary mb-6 h-10 flex items-center justify-center gap-2">
+        <div className="font-mono text-base sm:text-2xl lg:text-3xl text-text-secondary mb-5 h-10 flex items-center justify-center gap-2">
           <span className="text-amber">{'<'}</span>
           <TypeAnimation
             sequence={typeSequence as (string | number)[]}
@@ -124,6 +135,20 @@ export default function Hero({ profile }: { profile: Profile }) {
           />
           <span className="text-amber">{'/>'}</span>
         </div>
+
+        {/* Current role */}
+        {profile.currentRole && profile.currentCompany && (
+          <div className="mb-6">
+            <a
+              href="#experience"
+              className="inline-flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 font-mono text-xs sm:text-sm text-text-secondary bg-surface/70 border border-border hover:border-cyan/40 hover:text-text-primary px-4 py-2 rounded-lg transition-colors duration-200"
+            >
+              <Briefcase size={13} className="text-amber flex-shrink-0" />
+              <span>{profile.currentRole}</span>
+              <span className="text-amber">@ {profile.currentCompany}</span>
+            </a>
+          </div>
+        )}
 
         {/* Short bio */}
         <p className="font-body text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in">
@@ -176,19 +201,25 @@ export default function Hero({ profile }: { profile: Profile }) {
         </div>
 
         {/* Terminal code snippet — decorative but memorable */}
-        <div className="max-w-md mx-auto bg-surface border border-border rounded-lg p-4 text-left font-mono text-xs sm:text-sm">
+        <div className="max-w-md mx-auto bg-surface border border-border rounded-lg p-4 text-left font-mono text-xs sm:text-sm overflow-x-auto">
           <div className="flex items-center gap-1.5 mb-3">
             <span className="w-3 h-3 rounded-full bg-red/60" />
             <span className="w-3 h-3 rounded-full bg-amber/60" />
             <span className="w-3 h-3 rounded-full bg-green/60" />
             <span className="ml-2 text-text-muted text-xs">sunny.ts</span>
           </div>
-          <div className="space-y-1 text-text-muted">
+          <div className="space-y-1 text-text-muted whitespace-nowrap">
             <p><span className="text-amber">const</span> <span className="text-cyan">developer</span> = {'{'}</p>
-            <p className="pl-4"><span className="text-text-secondary">name:</span> <span className="text-green">"Sunny Sharma"</span>,</p>
-            <p className="pl-4"><span className="text-text-secondary">stack:</span> [<span className="text-green">"Java"</span>, <span className="text-green">"Spring Boot"</span>, <span className="text-green">"MERN"</span>],</p>
-            <p className="pl-4"><span className="text-text-secondary">openToWork:</span> <span className="text-amber">true</span>,</p>
-            <p className="pl-4"><span className="text-text-secondary">location:</span> <span className="text-green">"Mumbai 🇮🇳"</span>,</p>
+            <p className="pl-4"><span className="text-text-secondary">name:</span> <span className="text-green">"{profile.name}"</span>,</p>
+            <p className="pl-4"><span className="text-text-secondary">role:</span> <span className="text-green">"Full-Stack Intern @ Namaah"</span>,</p>
+            <p className="pl-4"><span className="text-text-secondary">building:</span> <span className="text-green">"Atlas · AI film platform"</span>,</p>
+            <p className="pl-4"><span className="text-text-secondary">stack:</span> [<span className="text-green">"React"</span>, <span className="text-green">"FastAPI"</span>, <span className="text-green">"Java"</span>],</p>
+            <p className="pl-4">
+              <span className="text-text-secondary">openToWork:</span>{' '}
+              {profile.openToWork && !availableNow
+                ? <span className="text-green">"{profile.availableFrom}"</span>
+                : <span className="text-amber">{String(profile.openToWork)}</span>},
+            </p>
             <p>{'}'}</p>
           </div>
         </div>

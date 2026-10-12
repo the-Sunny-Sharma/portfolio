@@ -5,10 +5,20 @@ import { Mail, Github, Linkedin, Send, MapPin, MessageSquare } from 'lucide-reac
 import toast from 'react-hot-toast'
 import SectionHeading from '@/components/ui/SectionHeading'
 
-type Profile = { email: string; github: string; linkedin: string; location: string; phone: string }
+type Profile = {
+  email: string
+  github: string
+  linkedin: string
+  location: string
+  phone: string
+  openToWork: boolean
+  availableFrom: string
+  currentCompany?: string
+}
 
 export default function Contact({ profile }: { profile: Profile }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
+  const availableNow = !profile.availableFrom || profile.availableFrom.toLowerCase() === 'immediately'
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [loading, setLoading] = useState(false)
 
@@ -48,10 +58,19 @@ export default function Contact({ profile }: { profile: Profile }) {
           {/* Left info */}
           <div className={`lg:col-span-2 transition-all duration-700 delay-100 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <p className="font-body text-text-secondary text-sm sm:text-base leading-relaxed mb-8">
-              I'm actively looking for <span className="text-cyan font-semibold">Java Backend</span>,{' '}
-              <span className="text-cyan font-semibold">Full-Stack</span>, or{' '}
-              <span className="text-cyan font-semibold">MERN/Next.js</span> roles. Whether you have a position,
-              a project idea, or just want to connect — my inbox is always open.
+              {profile.openToWork ? (
+                <>
+                  {profile.currentCompany ? <>I'm currently interning at {profile.currentCompany} and </> : <>I'm </>}
+                  open to full-time{' '}
+                  <span className="text-cyan font-semibold">Full-Stack</span>,{' '}
+                  <span className="text-cyan font-semibold">AI Product Engineering</span>, and{' '}
+                  <span className="text-cyan font-semibold">Backend (Python / Java)</span> roles
+                  {availableNow ? ' starting immediately' : <> starting <span className="text-amber font-semibold">{profile.availableFrom}</span></>}.{' '}
+                </>
+              ) : profile.currentCompany ? (
+                <>I'm currently at {profile.currentCompany}. </>
+              ) : null}
+              Whether you have a position, a project idea, or just want to connect, my inbox is always open.
             </p>
 
             <div className="space-y-4 mb-8">
