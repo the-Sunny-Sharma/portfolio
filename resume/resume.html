@@ -1,0 +1,218 @@
+<!doctype html>
+<!--
+  Source for public/resume.pdf. Not served by the site (only public/ is).
+
+  To regenerate the PDF: open this file in Chrome → Print → Destination "Save as PDF",
+  Paper A4, Margins "Default" (uses the @page margins below), and UNTICK "Headers and footers".
+  Save over public/resume.pdf.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sunny Yogendra Sharma — Resume</title>
+<meta name="author" content="Sunny Yogendra Sharma">
+<style>
+  @page { size: A4; margin: 12mm 15mm 12mm 15mm; }
+
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif;
+    font-size: 9.7pt;
+    line-height: 1.34;
+    color: #111;
+  }
+  p { margin: 0; }
+  a { color: #1a4fd6; text-decoration: none; }
+  b { font-weight: bold; }
+
+  /* ── Header ─────────────────────────────── */
+  .top {
+    display: grid;
+    grid-template-columns: 1fr 25mm; /* name and contacts centred in the space left of the photo */
+    align-items: center;
+    gap: 5mm;
+  }
+  .ident { text-align: center; }
+  h1 { font-size: 21pt; letter-spacing: 0.4pt; margin: 0 0 0.6mm; line-height: 1.1; }
+  .headline { font-size: 10.5pt; font-weight: bold; color: #333; margin-bottom: 1.4mm; }
+  .contact { font-size: 9.4pt; line-height: 1.5; white-space: nowrap; }
+  .photo { width: 25mm; height: 33.3mm; object-fit: cover; display: block; }
+
+  /* ── Sections ───────────────────────────── */
+  h2 {
+    font-size: 12pt;
+    margin: 3.6mm 0 1.6mm;
+    padding-bottom: 0.7mm;
+    border-bottom: 0.75pt solid #111;
+    break-after: avoid;
+  }
+  .entry { break-inside: avoid; margin-bottom: 2.2mm; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .entry-title { font-weight: bold; font-size: 10pt; }
+  .date { white-space: nowrap; color: #333; }
+  .sub { font-style: italic; color: #444; }
+  .stack { font-style: italic; color: #444; }
+  .links { font-size: 9.3pt; }
+  ul { margin: 0.7mm 0 0; padding-left: 4.4mm; }
+  li { margin: 0.35mm 0; padding-left: 0.4mm; }
+  .skills p { margin: 0.55mm 0; }
+  .new-page { break-before: page; }
+  .new-page h2 { margin-top: 0; }
+  .plain li { margin: 0.5mm 0; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="ident">
+    <h1>SUNNY YOGENDRA SHARMA</h1>
+    <p class="headline">Full-Stack Software Engineer · AI Products</p>
+    <p class="contact">Phone: +91 84338 98723 · Email: <a href="mailto:sunny.sharma.syn@gmail.com">sunny.sharma.syn@gmail.com</a></p>
+    <p class="contact">LinkedIn: <a href="https://linkedin.com/in/sunny-sharma1409">linkedin.com/in/sunny-sharma1409</a> · GitHub: <a href="https://github.com/the-Sunny-Sharma">github.com/the-Sunny-Sharma</a></p>
+    <p class="contact">Portfolio: <a href="https://the-sunny-sharma.vercel.app/">the-sunny-sharma.vercel.app</a> · Mumbai, Maharashtra (Open to Relocation)</p>
+  </div>
+  <img class="photo" src="photo.jpg" alt="Photo of Sunny Sharma">
+</header>
+
+<section>
+  <h2>Professional Summary</h2>
+  <p>
+    Full-Stack Software Engineer building AI-powered products end to end with <b>Python/FastAPI</b>,
+    <b>Java/Spring Boot</b>, <b>PostgreSQL</b> and <b>React</b>. <b>Full-Stack Developer Intern at Namaah Pvt. Ltd.</b>
+    and sole developer of two production modules of Atlas, an AI film-production platform (<b>190+ REST endpoints</b>).
+    Integrates <b>LLM and generative-media APIs</b> (OpenAI GPT-4o, fal.ai, Anthropic Claude, Google Gemini) into live
+    products; merged open-source PR in TheAlgorithms/Java (66k stars). Seeking full-time Full-Stack / AI Product
+    Engineering roles from <b>Dec 2026</b>.
+  </p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Full-Stack Developer Intern</span><span class="date">Jun 2026 – Present</span></div>
+    <p class="sub">Namaah Pvt. Ltd. (AI startup) · Remote · Product: Atlas, an AI film-production platform</p>
+    <p class="stack">FastAPI · SQLAlchemy · PostgreSQL · React · Zustand · WebCodecs · FFmpeg · fal.ai · OpenAI · Cloudflare R2</p>
+    <ul>
+      <li>Single-handedly built <b>Slate</b>, a Frame.io-style review &amp; production workspace: <b>30-table PostgreSQL</b> schema, <b>115 FastAPI endpoints</b>, two-tier role-based access control and the full React frontend (50K+ lines).</li>
+      <li>Built frame-accurate video review: SMPTE timecodes, threaded time-ranged comments with on-frame annotations and voice/screen recordings, versioned approvals, and an <b>FFmpeg</b> 1080p/720p/480p rendition ladder.</li>
+      <li>Secured sharing with <b>PBKDF2</b>-hashed password links, expiry and download controls; added email invites with delivery tracking, notifications, an activity log, and calendar and workload views.</li>
+      <li>Designed and built the <b>Storyboard Studio</b> solo (76 endpoints): script to shots, batch AI frame generation via <b>fal.ai</b>, a multi-track animatic timeline, and <b>in-browser MP4 export</b> (WebCodecs + mp4-muxer).</li>
+      <li>Shipped an audio-AI pipeline (TTS, dialogue, music, lip-sync) and Script AI on fal any-llm with <b>automatic OpenAI fallback</b>, tracked in a jobs panel with live ETAs; added a story bible for consistent characters.</li>
+      <li>Enhanced the timeline video editor: <b>GPT-4o Vision</b> gap-fill prompts from adjacent frames, faster cold loads (split fetches, server-side waveforms, caching; pytest), and an upload queue with pause/cancel/retry.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Full-Stack Developer (Independent)</span><span class="date">Feb 2025 – May 2026</span></div>
+    <p class="sub">Self-Directed Engineering — Production Projects, Open Source &amp; Certifications · Mumbai, MH</p>
+    <ul>
+      <li>Designed and shipped production-grade full-stack applications with <b>Java 21, Spring Boot</b>, Spring Data JPA, REST APIs, MySQL/PostgreSQL, React.js and Docker; built async event pipelines with <b>Apache Kafka</b> and Redis queues.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Full-Stack JavaScript Intern</span><span class="date">Dec 2023 – Jan 2024</span></div>
+    <p class="sub">Mira Advanced Engineering · Thane, Maharashtra</p>
+    <ul>
+      <li>Delivered one production-ready <b>MERN</b> project per week under Agile sprint conditions — Airline Management System and Employee Management System using JWT auth, RBAC, MongoDB/MySQL hybrid storage.</li>
+      <li>Built Express.js REST APIs with input validation, error handling and RBAC; presented working demos weekly.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Technical Skills</h2>
+  <p><b>Languages:</b> Java 21 (multithreading, concurrency, OOP), Python, JavaScript, TypeScript, SQL, HTML5, CSS3</p>
+  <p><b>Backend:</b> FastAPI, Spring Boot (MVC, Data JPA, Security, Batch), SQLAlchemy, Hibernate ORM, Node.js, Express.js, REST APIs, WebSockets, Microservices, Background Job Queues</p>
+  <p><b>Frontend:</b> React.js (hooks, Context API, Redux, Zustand), Next.js, Vite, Tailwind CSS, TanStack Query</p>
+  <p><b>AI &amp; Media:</b> OpenAI (GPT-4o Vision), fal.ai (image, video, audio, any-llm), Anthropic Claude API, Google Gemini API, Spring AI, Prompt Engineering, WebCodecs, Web Audio API, FFmpeg</p>
+  <p><b>Databases:</b> PostgreSQL, MySQL, MongoDB, Redis, Firebase, Oracle — Alembic &amp; Flyway migrations</p>
+  <p><b>DevOps &amp; Cloud:</b> Docker, Docker Compose, GitHub Actions CI/CD, Railway, Cloudflare (Pages, R2), Vercel, Render, Nginx, Maven, OpenAPI/Swagger, Postman, Git, Linux; Kubernetes &amp; AWS (familiar)</p>
+  <p><b>Testing:</b> pytest, Vitest, JUnit 5, Mockito, Jest, React Testing Library, SonarQube</p>
+  <p><b>Concepts:</b> OOP, SOLID, Design Patterns, System Design, Distributed Systems, Performance Tuning, Agile/Scrum</p>
+</section>
+
+<section class="new-page">
+  <h2>Projects</h2>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Job Board Application</span><span class="date">Apr 2026</span></div>
+    <p class="sub">Java 21 · Spring Boot · Spring Security · Spring Data JPA · React.js · MySQL · Docker</p>
+    <p class="links"><a href="https://github.com/the-Sunny-Sharma/job-board-application">github.com/the-Sunny-Sharma/job-board-application</a> ·
+      <a href="https://job-board-syn.vercel.app/">job-board-syn.vercel.app</a></p>
+    <ul>
+      <li>React.js + Spring Boot REST API with Spring Security + JWT stateless auth, RBAC (ADMIN/CANDIDATE) and global exception handling; <b>Anthropic Claude via Spring AI</b> for resume-to-job matching.</li>
+      <li>JPA Specification API for dynamic multi-parameter filtering on MySQL; Cloudinary uploads, JavaMailSender notifications, Docker Compose deployment, GitHub Actions CI/CD on Render.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">TraderOS — FinTech Tax Platform</span><span class="date">May 2026 (In Dev)</span></div>
+    <p class="sub">Java 21 · Spring Boot · Spring Batch · Apache Kafka · PostgreSQL · Redis · FastAPI · React.js · Docker</p>
+    <p class="links"><a href="https://github.com/the-Sunny-Sharma/traderOS">github.com/the-Sunny-Sharma/traderOS</a></p>
+    <ul>
+      <li>Polyglot microservices: Spring Boot API with Spring Batch + Redis job queue and <b>Apache Kafka</b> event streaming, PostgreSQL with Flyway migrations; Python FastAPI microservice parses multi-broker financial XLSX data.</li>
+      <li>React.js SPA (TanStack Query async polling); <b>Google Gemini API</b> for plain-language tax explanations; iText 7 PDF export; OpenAPI/Swagger docs; full stack on Docker Compose.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Codenest — EdTech Platform</span><span class="date">Jan 2025</span></div>
+    <p class="sub">Next.js · TypeScript · Node.js · Socket.IO · WebRTC · MongoDB · Redis · Nginx</p>
+    <p class="links"><a href="https://github.com/the-Sunny-Sharma/codenest-ucoe">github.com/the-Sunny-Sharma/codenest-ucoe</a></p>
+    <ul>
+      <li>Microservice architecture with API Gateway (NextAuth v5); <b>Socket.IO</b> real-time collaborative Monaco Editor with conflict resolution; Redis-queued code execution via Judge0; Cashfree payments; Mux + HLS.js live streaming.</li>
+      <li><b>Sub-100ms WebRTC latency</b> across 50+ concurrent users via Nginx; 98.9% uptime and 0.8% error rate across 1,000 test actions.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Open Source Contributions</h2>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title"><a href="https://github.com/TheAlgorithms/Java/pull/7418">TheAlgorithms/Java (66k stars) — PR #7418, merged</a></span><span class="date">May 2026</span></div>
+    <p class="sub">Java 21 · JUnit 5 · DSA</p>
+    <ul>
+      <li>Rat in a Maze (DFS backtracking, visited matrix, full Javadoc, IllegalArgumentException validation); 12 JUnit 5 unit tests — 100% edge-case coverage.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title"><a href="https://github.com/nanotaboada/java.samples.spring.boot/pull/329">nanotaboada/java.samples.spring.boot — PR #329, in review</a></span><span class="date">May 2026</span></div>
+    <p class="sub">Spring Boot 4 · JDK 25 · OpenAPI/Swagger</p>
+    <ul>
+      <li>PATCH endpoint per RFC 7396 with JSR-380 Bean Validation, @Valid, full OpenAPI/Swagger docs; 45 tests passing, SonarQube quality gate passed.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">B.E. in Information Technology — CGPA: 8.19 / 10</span><span class="date">Jun 2021 – May 2025</span></div>
+    <p class="sub">Universal College of Engineering, University of Mumbai · Mumbai, Maharashtra</p>
+    <ul>
+      <li>Relevant Coursework: Data Structures &amp; Algorithms, DBMS, Operating Systems, Computer Networks, OOP, Design Patterns, Multithreading &amp; Concurrency</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Certifications &amp; Achievements</h2>
+  <ul class="plain">
+    <li><b>Java, Spring Boot, Docker &amp; Microservices</b> — Telusko / Udemy [<a href="https://www.udemy.com/certificate/UC-81ad7476-2152-4582-ad5e-fde7f71f7282/">Certificate</a>]</li>
+    <li><b>Full-Stack Web Development (MERN)</b> — Kamal Sir [<a href="https://drive.google.com/file/d/1xzAoIL4OyCI-4kz42qt4J0OdK-edVLE5/view">Certificate</a>]</li>
+    <li><b>SQL Intermediate</b> — HackerRank [<a href="https://www.hackerrank.com/certificates/iframe/d6f2c4f089dc">Certificate</a>]</li>
+    <li><b>JPMorganChase Software Engineering Simulation</b> — Forage (Kafka, JPA, REST, Maven) [<a href="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/E6McHJDKsQYh79moz_Sj7temL583QAYpHXD_69d7b3521485ae3787dabd42_1778506163900_completion_certificate.pdf">Certificate</a>]</li>
+    <li><b>Finalist — InnovateYou Teachathon 2023</b> — National Hackathon, Pune — Top team from 200+ nationally</li>
+    <li><b>CSI Member</b> — Certified in Cybersecurity &amp; Drone Awareness workshops</li>
+  </ul>
+</section>
+
+</body>
+</html>
